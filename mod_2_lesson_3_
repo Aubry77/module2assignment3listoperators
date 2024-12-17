@@ -1,0 +1,108 @@
+"""
+Module for list operations and transformations: sorting grades, calculating averages,
+checking student attendance, and extracting temperature data.
+"""
+
+def sort_grades_descending(grades):
+    """
+    Sort grades in descending order.
+    
+    Args:
+        grades (list): List of grades.
+    
+    Returns:
+        list: Sorted grades.
+    """
+    # Sort grades in descending order
+    return sorted(grades, reverse=True)
+
+def calculate_average_grade(grades):
+    """
+    Calculate average grade.
+    
+    Args:
+        grades (list): List of grades.
+    
+    Returns:
+        float: Average grade.
+    """
+    # Calculate average grade
+    return sum(grades) / len(grades)
+
+def main_grades_analysis():
+    """
+    Perform grades analysis.
+    """
+    grades = [85, 90, 78, 88, 76, 95, 89, 80, 72, 93]
+    sorted_grades = sort_grades_descending(grades)
+    print("Sorted grades:", sorted_grades)
+    average_grade = calculate_average_grade(grades)
+    print("Average grade:", average_grade)
+
+if __name__ == '__main__':
+    main_grades_analysis()
+def check_alice(submitted, attended):
+    """
+    Check if Alice submitted and attended.
+    
+    Args:
+        submitted (list): List of students who submitted assignments.
+        attended (list): List of students who attended class.
+    
+    Returns:
+        bool: True if Alice submitted and attended, False otherwise.
+    """
+    # Check if Alice is in both lists
+    return "Alice" in submitted and "Alice" in attended
+
+def main_check_alice():
+    """
+    Check Alice's submission and attendance.
+    """
+    submitted = ["Alice", "Bob", "Charlie", "David"]
+    attended = ["Charlie", "Eve", "Alice", "Frank"]
+    if check_alice(submitted, attended):
+        print("Alice submitted and attended.")
+    else:
+        print("Alice did not submit or attend.")
+
+if __name__ == '__main__':
+    main_check_alice()
+def extract_second_week_temperatures(temperatures):
+    """
+    Extract temperatures for the second week.
+    
+    Args:
+        temperatures (list): List of daily temperatures.
+    
+    Returns:
+        list: Temperatures for the second week.
+    """
+    # Extract temperatures from index 7 to 14
+    return temperatures[7:14]
+
+def extract_temperatures_above_100(temperatures):
+    """
+    Extract temperatures above 100.
+    
+    Args:
+        temperatures (list): List of daily temperatures.
+    
+    Returns:
+        list: Temperatures above 100.
+    """
+    # Filter temperatures above 100
+    return [temp for temp in temperatures if temp > 100]
+
+def main_temperature_analysis():
+    """
+    Perform temperature analysis.
+    """
+    temperatures = [72, 75, 78, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106]
+    second_week_temperatures = extract_second_week_temperatures(temperatures)
+    print("Second week temperatures:", ", ".join(map(str, second_week_temperatures)))
+    temperatures_above_100 = extract_temperatures_above_100(temperatures)
+    print("Temperatures above 100:", ", ".join(map(str, temperatures_above_100)))
+
+if __name__ == '__main__':
+    main_temperature_analysis()
